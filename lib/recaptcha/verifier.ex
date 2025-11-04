@@ -75,11 +75,12 @@ if Code.ensure_loaded?(Plug) do
     @recaptcha_form_field "g-recaptcha-response"
 
     @impl Plug
-    def init(opts), do: opts |> Keyword.put_new(:client, Recaptcha.API.client())
+    def init(opts), do: opts
 
     @impl Plug
     def call(%{params: %{@recaptcha_form_field => token}} = conn, opts) do
-      opts[:client] |> API.verify(token) |> handle_response(conn)
+      client = opts[:client] || Recaptcha.API.client()
+      client |> API.verify(token) |> handle_response(conn)
     end
 
     def call(conn, _opts), do: conn
