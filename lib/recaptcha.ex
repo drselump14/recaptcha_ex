@@ -11,15 +11,15 @@ defmodule Recaptcha do
   @doc """
   Fetch the recaptcha base_url from the application configuration.
   """
-  def base_url(), do: Application.get_env(:recaptcha, :base_url, "https://www.google.com")
+  def base_url(), do: Application.get_env(:recaptcha_v3, :base_url, "https://www.google.com")
 
   @doc """
   Fetch the recaptcha site key from the application configuration.
   """
-  def site_key(), do: Application.get_env(:recaptcha, :site_key)
+  def site_key(), do: Application.get_env(:recaptcha_v3, :site_key)
 
   @doc """
   Fetch the recaptcha secret from the application configuration.
   """
-  def secret(), do: Application.get_env(:recaptcha, :secret)
+  def secret(), do: Application.get_env(:recaptcha_v3, :secret)
 end

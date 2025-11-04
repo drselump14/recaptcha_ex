@@ -21,7 +21,7 @@ Add `recaptcha` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:recaptcha, "~> 0.1.0"}
+    {:recaptcha_v3, "~> 0.1.0"}
   ]
 end
 ```
@@ -40,7 +40,7 @@ Add your reCAPTCHA keys to your application configuration:
 
 ```elixir
 # config/config.exs
-config :recaptcha,
+config :recaptcha_v3,
   site_key: "your-site-key-here",
   secret: "your-secret-key-here"
 ```
